@@ -1,0 +1,61 @@
+.home-page-container{
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("./img/banner.png");
+}
+
+.home-page-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100vw;
+    height: 20vh;
+
+    padding: 20px;
+}
+
+.home-page-title h1{
+    font-size: 50px;
+    font-family: 'Oswald', sans-serif;
+    color: #FFF;
+}
+
+.home-page-items{
+    display: flex;
+    flex-direction: row;
+
+    gap: 15px;
+}
+
+.home-page-items p{
+    color: #FFF;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.home-page-items .link{
+    text-decoration: none;
+}
+
+.home-page-items .link:hover{
+    text-decoration: 2px #FFF underline;
+}
+
+.home-page-slogan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 60vh;
+}
+
+.home-page-slogan h3{
+    color: #FFF;
+    font-family: 'Oswald', sans-serif;
+
+    font-size: 50px;
+    font-weight: bold;
+}

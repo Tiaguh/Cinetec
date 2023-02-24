@@ -1,0 +1,148 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    flex-direction: column;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("./img/banner.png");
+    
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+form h1{
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    color: #FFF;
+    
+    animation: titulo-animação 1s;
+}
+
+@keyframes titulo-animação{
+    from{
+        transform: translateY(-200px);
+    }
+
+    to{
+        transform: translateY(0);
+    }
+}
+
+form input {
+    width: 500px;
+    height: 50px;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: x-large;
+    color: #FFF;    
+    font-weight: bold;
+    text-align: center;
+
+    background-color: transparent;
+
+    border: none;
+    border-bottom: 2px solid #FFF ;
+}
+
+form input::placeholder{
+    color: #FFF;
+}
+
+form button {
+    width: 250px;
+    height: 50px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    background-color: #000;
+    color: #FFF;
+    border: none;
+
+    animation: button-animação 1s;
+}
+
+form button:hover {
+    cursor: pointer;
+}
+
+@keyframes button-animação{
+    from {
+        transform: translateY(100px)
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.input-1{
+    animation: input-1-animação 2s;
+}
+
+@keyframes input-1-animação{
+    from {
+        transform: translateX(-400px)
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+.input-2{
+    animation: input-2-animação 2s;
+}
+
+@keyframes input-2-animação{
+    from {
+        transform: translateX(400px)
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+.link{
+    text-decoration: none;
+    color: #FFF;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+
+    margin-top: 15px;
+
+    overflow-y: hidden;
+}
+
+.link:hover{
+    text-decoration: underline;
+}
+
+.link h3{
+    animation: animação-h3 2s;
+
+    font-size: 20px;
+}
+
+@keyframes animação-h3{
+    from{
+        transform: translateY(200px);
+    }
+
+    to{
+        transform: translateY(0);
+    }
+}

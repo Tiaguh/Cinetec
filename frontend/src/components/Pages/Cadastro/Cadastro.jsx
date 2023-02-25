@@ -5,14 +5,8 @@ import './cadastro.css'
 
 import { toast } from 'react-toastify';
 
-function Index() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [userName, setUserName] = useState('')
-}
-
 export default function Cadastro() {
-  
+
   const handleRegister = (e) => {
     e.preventDefault()
     toast.success('Successful Login!', { // texto que será exibido no toasty
@@ -25,6 +19,12 @@ export default function Cadastro() {
       progress: undefined,
       theme: "dark",
     });
+  }
+
+  function Index() {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [userName, setUserName] = useState('')
   }
 
   async function handleResgister(event) {
@@ -40,7 +40,7 @@ export default function Cadastro() {
       setEmail('');
       setPassword('');
       setUserName('');
-    } catch(error){
+    } catch (error) {
       alert(`Erro no cadastro. Tente novamente. \n Erro: ${error}`);
     }
   }

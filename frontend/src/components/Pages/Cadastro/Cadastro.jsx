@@ -7,39 +7,36 @@ import { toast } from 'react-toastify';
 
 export default function Cadastro() {
 
-  const handleRegister = (e) => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [typeUser, setTypeUser] = useState('')
+
+  async function handleResgister(e) {
+
     e.preventDefault()
-    toast.success('Successful Login!', { // texto que será exibido no toasty
-      position: "top-right", // posição que irá aparecer
-      autoClose: 5000, // tempo de exibição
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  }
 
-  function Index() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [userName, setUserName] = useState('')
-  }
-
-  async function handleResgister(event) {
-    event.preventDefault();
     try {
       const data = {
-        email, password, userName
+        name, email, password, typeUser
       };
       const response = await api.post('/user', data);
 
-      alert(`Usuário cadastrado com sucesso. Bem-vindo(a) ao sistema ${userName}`);
+      alert(`Usuário cadastrado com sucesso. Bem-vindo(a) ao sistema ${name}`);
 
-      setEmail('');
-      setPassword('');
-      setUserName('');
+      if (response.status === 200) {
+        toast.success('Successful Login!', { // texto que será exibido no toasty
+          position: "top-right", // posição que irá aparecer
+          autoClose: 5000, // tempo de exibição
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      }
+
     } catch (error) {
       alert(`Erro no cadastro. Tente novamente. \n Erro: ${error}`);
     }
@@ -47,11 +44,15 @@ export default function Cadastro() {
 
   return (
     <div className="cadastro-container">
-      <form onSubmit={handleResgister}>
+      <form>
 
         <h1>Cadastro</h1>
 
-        <input className='input-1' type="name" placeholder="Digite seu Nome" />
+        <input
+          className='input-1' type="name"
+          placeholder="Digite seu Nome"
+          value={name}
+          onChange={e => setName(e.target.value)} />
 
         <input
           className='input-2'
@@ -64,7 +65,7 @@ export default function Cadastro() {
         <input
           className='input-1'
           type="password"
-          laceholder="Digite seu Senha"
+          placeholder="Digite seu Senha"
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
@@ -73,10 +74,11 @@ export default function Cadastro() {
           className='input-2'
           type="name"
           placeholder="Digite seu Tipo de Usuário"
-          value={userName}
-          onChange={e => setUserName(e.target.value)} />
+          value={typeUser}
+          onChange={e => setTypeUser(e.target.value)}
+        />
 
-        <button onClick={handleRegister}>Cadastrar</button>
+        <button onClick={handleResgister}>Cadastrar</button>
       </form>
 
       <Link className='link' to="/login">

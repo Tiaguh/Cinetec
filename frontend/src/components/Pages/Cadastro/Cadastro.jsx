@@ -20,7 +20,7 @@ export default function Cadastro() {
       const data = {
         name, email, password, typeUser
       };
-      const response = await api.post('/user', data);
+      const response = await api.post('/user/create-user', data);
 
       alert(`Usuário cadastrado com sucesso. Bem-vindo(a) ao sistema ${name}`);
 

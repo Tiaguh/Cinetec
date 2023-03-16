@@ -1,9 +1,9 @@
 import express from 'express';
 import db from '../services/userServices.js';
 
-const routes = express.Router();
+const router = express.Router();
 
-routes.post('/create-user', async (req, res) => {
+router.post('/create-user', async (req, res) => {
   const { name, email, password, typeUser } = req.body;
 
   if (!name || !email || !password || !typeUser) res.status(400).json({ message: "Insira todos os dados" })
@@ -13,4 +13,4 @@ routes.post('/create-user', async (req, res) => {
   res.status(200).send({ message: "Salvo com sucesso!" });
 });
 
-export default routes;
+export default router;

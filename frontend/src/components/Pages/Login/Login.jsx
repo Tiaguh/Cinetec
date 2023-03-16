@@ -19,7 +19,7 @@ export default function Login() {
         email, password
       }
 
-      const response = await api.get('/user/login', data)
+      const response = await api.post('/login/login', data)
 
       if (response.status === 200) {
         toast.success('Successful Login!', { // texto que será exibido no toasty
@@ -33,11 +33,12 @@ export default function Login() {
           theme: "dark",
         });
       }
-    } catch (error) {
+    }
+    catch (error) {
       alert(`Erro no login. Tente novamente. \n Erro: ${error}`);
     }
   }
-
+  
   return (
     <div className="login-container">
       <form>

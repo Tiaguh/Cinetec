@@ -82,7 +82,7 @@ export default function Cadastro() {
       </form>
 
       <Link className='link' to="/login">
-        <h3>Não possuí uma conta?</h3>
+        <h3>Já possuí uma conta?</h3>
       </Link>
 
     </div>

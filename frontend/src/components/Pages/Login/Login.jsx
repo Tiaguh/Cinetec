@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import api from '../../../api';
 import './login.css'
 
@@ -9,6 +9,7 @@ export default function Login() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  let navigate = useNavigate()
 
   async function handleLogin(e) {
 
@@ -19,7 +20,7 @@ export default function Login() {
         email, password
       }
 
-      const response = await api.post('/login/login', data)
+      const response = await api.post('/login', data)
 
       if (response.status === 200) {
         toast.success('Successful Login!', { // texto que será exibido no toasty
@@ -33,6 +34,9 @@ export default function Login() {
           theme: "dark",
         });
       }
+
+      navigate('/')
+
     }
     catch (error) {
       alert(`Erro no login. Tente novamente. \n Erro: ${error}`);

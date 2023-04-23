@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import api from '../../../api';
 import './cadastro.css'
+import banner from './img/banner.png'
 
 import { toast } from 'react-toastify';
 
@@ -25,7 +26,7 @@ export default function Cadastro() {
       alert(`Usuário cadastrado com sucesso. Bem-vindo(a) ao sistema ${name}`);
 
       if (response.status === 200) {
-        toast.success('Successful Login!', { // texto que será exibido no toasty
+        toast.success('Successful Register!', { // texto que será exibido no toasty
           position: "top-right", // posição que irá aparecer
           autoClose: 5000, // tempo de exibição
           hideProgressBar: false,
@@ -44,6 +45,9 @@ export default function Cadastro() {
 
   return (
     <div className="cadastro-container">
+
+      <img className='img' src={banner} alt="" srcset="" />
+
       <form>
 
         <h1>Cadastro</h1>

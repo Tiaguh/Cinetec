@@ -1,10 +1,13 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import banner from './img/banner.png'
 import './HomePage.css'
 
 export default function HomePageContent() {
     return (
         <div className="home-page-container">
+
+            <img className='img' src={banner} alt="" />
 
             <div className="home-page-header">
 

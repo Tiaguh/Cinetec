@@ -1,0 +1,23 @@
+.container-filmes {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #001;
+}
+
+.header-filmes {
+    width: 100vw;
+    height: 10vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-filmes h1 {
+    color: #FFF;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}

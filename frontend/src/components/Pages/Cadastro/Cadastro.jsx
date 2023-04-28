@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import api from '../../../api';
+import api from "../../../service/api";
 import './cadastro.css'
 import banner from './img/banner.png'
 

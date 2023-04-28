@@ -6,7 +6,7 @@ const router = express.Router();
 router.post('/create-user', async (req, res) => {
   const { name, email, password, typeUser } = req.body;
 
-  if (!name || !email || !password || !typeUser) res.status(400).json({ message: "Insira todos os dados" })
+  if (!name || !email || !password || !typeUser) return res.status(400).json({ message: "Insira todos os dados" })
 
   await db.createUser(name, email, password, typeUser);
 

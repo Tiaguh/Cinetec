@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import api from "../../../api";
+import api from "../../../service/api";
 import "./login.css"
 import banner from './img/banner.png'
 
@@ -22,6 +22,8 @@ export default function Login() {
       }
 
       const response = await api.post("/login", data)
+
+      console.log('>>>>>>',response);
 
       if (response.status === 200) {
         toast.success("Successful Login!", { // texto que será exibido no toasty

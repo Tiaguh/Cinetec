@@ -13,4 +13,17 @@ router.post('/create-user', async (req, res) => {
   res.status(200).send({ message: "Salvo com sucesso!" });
 });
 
+router.put('/profile', async (req, res) => {
+  try {
+    const { name, email, password, typeUser } = req.body;
+    const { idUserProfile } = req;
+
+    await db.updateProfile(name, email, password, typeUser, idUserProfile);
+
+    res.status(200).send({ message: "Dados atualizados com sucesso!" });
+  } catch (err) {
+    res.status(500).send({ message: `Houve um erro. ${err}` });
+  }
+})
+
 export default router;

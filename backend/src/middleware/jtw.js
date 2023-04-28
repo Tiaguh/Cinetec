@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken'
+import jwt, { decode } from 'jsonwebtoken'
 
-function verifyToken(req, res) {
+function verifyToken(req, res, next) {
   const myKey = "EssaéaChaveDeCriptogr@fi@!";
 
   const authHeader = req.headears.authorization;
@@ -20,8 +20,10 @@ function verifyToken(req, res) {
 
   jwt.verify(token, myKey, (error, decoded) => {
     if (error) {
-      return res.status(401).send({ message: "Sessão encerrada, usuário não logad!" })
+      return res.status(401).send({ message: "Sessão encerrada, usuário não logado!" })
     }
+
+    req.idUserToken = decoded.id_user;
 
     return next();
   })

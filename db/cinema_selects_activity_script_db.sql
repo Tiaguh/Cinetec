@@ -41,7 +41,7 @@ CREATE TABLE tbl_filme_has_tbl_ator(
     PRIMARY KEY(FK_id_filme, FK_id_ator)
 );
 
-CREATE TABLE tbl_Usuario(
+CREATE TABLE tbl_usuario(
 	id_usuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45) NOT NULL,
     email VARCHAR(60) NOT NULL,

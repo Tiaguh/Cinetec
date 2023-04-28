@@ -9,13 +9,13 @@ async function createUser(name, email, password, typeUser) {
   conn.end();
 }
 
-async function updateUser(name, email, password, typeUser, idUser) {
-  const sql = "UPDATE tbl_Usuario SET nome = ?, email = ?, senha = ?, tipo_usuario = ? WHERE id_usuario = ?"
-  const dados = [name, email, password, typeUser, idUser];
+async function updateProfile(name, email, password, typeUser, idUser) {
+  const sql = "UPDATE tbl_usuario SET nome = ?, email = ?, senha = ?, tipo_usuario = ? WHERE id_usuario = ?"
+  const dataProfile = [name, email, password, typeUser, idUser];
 
   const conn = await database.connect();
-  conn.query(sql, dados);
+  conn.query(sql, dataProfile);
   conn.end();
 }
 
-export default { createUser, updateUser };
+export default { createUser, updateProfile };

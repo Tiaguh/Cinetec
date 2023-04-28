@@ -30,4 +30,8 @@ router.put('/update-actor', async (req, res) => {
     }
 })
 
+router.delete('/:idActor', async (req, res) => {
+
+})
+
 export default router

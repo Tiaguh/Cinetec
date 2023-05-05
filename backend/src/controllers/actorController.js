@@ -32,6 +32,15 @@ router.put('/update-actor', async (req, res) => {
 
 router.delete('/:idActor', async (req, res) => {
 
+    try {
+        const { idActor } = req.params.idActor
+
+        await db.deleteActor(idActor);
+
+        res.status(200).send({ message: "Ator deletado com sucesso!" })
+    } catch (err) {
+        res.status(500).send({ message: `Houve um erro: ${err}` })
+    }
 })
 
 export default router

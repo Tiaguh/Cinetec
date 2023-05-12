@@ -39,6 +39,7 @@ export default function Login() {
       }
 
       sessionStorage.setItem("login", true)
+      sessionStorage.setItem('token', data.token);
 
       navigate("/filmes")
 
